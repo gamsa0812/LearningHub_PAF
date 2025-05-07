@@ -1,0 +1,418 @@
+/* SkillPlan.css - Purple Theme */
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #a855f7;
+    --accent-color: #d8b4fe;
+    --favorite-color: #f472b6;
+    --light-bg: #f5f3ff;
+    --dark-text: #1e1b4b;
+    --gray-text: #7c7c8a;
+    --border-radius: 12px;
+    --shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+  }
+  
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .center {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    margin-left: 250px;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .profile-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    border-bottom: none;
+  }
+  
+  .profile-avatar {
+    cursor: pointer;
+    border: 4px solid #fff;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
+  }
+  
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .skill-container {
+    padding: 20px 0;
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .no-plans-message {
+    margin-top: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    color: var(--gray-text);
+  }
+  
+  .friends-section {
+    padding: 20px 0;
+  }
+  
+  .friends-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.15);
+  }
+  
+  .friends-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 15px;
+  }
+  
+  .friends-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-text);
+  }
+  
+  .friends-count {
+    margin-left: 15px;
+    color: var(--gray-text);
+    font-size: 16px;
+    background: rgba(109, 40, 217, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  
+  .friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .friend-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  .friend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(109, 40, 217, 0.2);
+  }
+  
+  .friend-favorite::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--favorite-color), var(--accent-color));
+  }
+  
+  .friend-card:not(.friend-favorite)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  }
+  
+  .favorite-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: var(--favorite-color);
+    font-size: 22px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .friend-card-header {
+    text-align: center;
+    padding: 30px 0 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  }
+  
+  .friend-avatar {
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(109, 40, 217, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .friend-card:hover .friend-avatar {
+    transform: scale(1.05);
+  }
+  
+  .friend-card-body {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .friend-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  .friend-status {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--gray-text);
+  }
+  
+  .friend-status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(109, 40, 217, 0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .friend-status-item.active {
+    background: rgba(168, 85, 247, 0.1);
+    color: var(--secondary-color);
+  }
+  
+  .friend-status-item.workout {
+    background: rgba(212, 180, 254, 0.1);
+    color: var(--accent-color);
+  }
+  
+  .friend-bio {
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+    color: var(--dark-text);
+    line-height: 1.6;
+    flex: 1;
+    margin-top: auto;
+    box-shadow: inset 0 2px 5px rgba(109, 40, 217, 0.08);
+    border-left: 3px solid var(--secondary-color);
+  }
+  
+  .friend-card-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(109, 40, 217, 0.1);
+    background-color: #fff;
+  }
+  
+  .friend-action-btn {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--gray-text);
+  }
+  
+  .friend-action-btn:hover {
+    background-color: rgba(109, 40, 217, 0.1);
+    transform: translateY(-3px);
+    color: var(--primary-color);
+  }
+  
+  .skill-plan-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: none;
+    animation: slideIn 0.7s ease-out;
+  }
+  
+  .skill-plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(109, 40, 217, 0.2);
+  }
+  
+  .skill-plan-active {
+    border-left: 5px solid var(--primary-color);
+  }
+  
+  .skill-plan-completed {
+    border: 2px solid rgba(109, 40, 217, 0.2);
+    background-color: rgba(168, 85, 247, 0.03);
+  }
+  
+  .skill-plan-completed .skill-plan-title {
+    text-decoration: line-through;
+    color: var(--gray-text);
+  }
+  
+  .skill-plan-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .skill-plan-checkbox {
+    transform: scale(1.21);
+    accent-color: var(--secondary-color);
+  }
+  
+  .skill-plan-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-text);
+    flex: 1;
+    line-height: 1.5;
+    width: 100%;
+  }
+  
+  .skill-plan-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .skill-plan-card:hover .skill-plan-action-buttons {
+    opacity: 1;
+  }
+  
+  .skill-plan-edit-btn,
+  .skill-plan-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-plan-edit-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(109, 40, 217, 0.1);
+    color: var(--primary-color);
+  }
+  
+  .skill-plan-delete-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(212, 180, 254, 0.1);
+    color: var(--accent-color);
+  }
+  
+  .skill-plan-body {
+    margin-bottom: 15px;
+  }
+  
+  .skill-plan-metadata {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-plan-tag {
+    background-color: rgba(109, 40, 217, 0.1);
+    border-radius: 20px;
+    padding: 5px 12px;
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .skill-plan-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray-text);
+    font-size: 14px;
+  }
+  
+  .skill-plan-resources {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+  }
+  
+  .skill-plan-resources-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+  }
