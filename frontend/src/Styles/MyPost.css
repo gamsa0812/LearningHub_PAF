@@ -1,0 +1,43 @@
+/* MyPost.css - Purple Theme */
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #a855f7;
+    --light-bg: #f5f3ff;
+    --shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.post-description {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgba(109, 40, 217, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.my-post {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    animation: fadeIn 0.5s ease-out;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.my-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(109, 40, 217, 0.2);
+}

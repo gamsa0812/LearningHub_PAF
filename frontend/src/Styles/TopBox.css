@@ -1,0 +1,149 @@
+/* TopBox.css - Purple Theme */
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #a855f7;
+    --accent-color: #d8b4fe;
+    --light-bg: #f5f3ff;
+    --dark-text: #1e1b4b;
+    --gray-text: #7c7c8a;
+    --border-radius: 12px;
+    --shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+  }
+  
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(109, 40, 217, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(109, 40, 217, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(109, 40, 217, 0); }
+  }
+  
+  .topbox-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    margin-bottom: 24px;
+    border-top: 3px solid var(--secondary-color);
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .topbox-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.15);
+    display: flex;
+    align-items: center;
+  }
+  
+  .topbox-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    margin-right: 10px;
+    border-radius: 2px;
+  }
+  
+  .stories-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 8px 0;
+    gap: 16px;
+    scrollbar-width: thin;
+  }
+  
+  .stories-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .stories-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+  }
+  
+  .stories-container::-webkit-scrollbar-track {
+    background-color: rgba(168, 85, 247, 0.1);
+    border-radius: 6px;
+  }
+  
+  .my_story_card {
+    min-width: 80px;
+    height: 120px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  .my_story_card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+  }
+  
+  .my_story_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(109, 40, 217, 0.4);
+  }
+  
+  .my_story_card:hover::after {
+    left: 100%;
+    top: 100%;
+  }
+  
+  .create-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    animation: pulse 2s infinite;
+  }
+  
+  .create-text {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
