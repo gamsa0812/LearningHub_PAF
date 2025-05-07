@@ -1,0 +1,199 @@
+/* FriendSection.css - Purple Theme */
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #a855f7;
+    --accent-color: #d8b4fe;
+    --favorite-color: #f472b6;
+    --light-bg: #f5f3ff;
+    --dark-text: #1e1b4b;
+    --gray-text: #7c7c8a;
+    --border-radius: 12px;
+    --shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+  }
+  
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  
+  .friends-section {
+    padding: 25px 0;
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .friends-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.15);
+  }
+  
+  .friends-icon {
+    font-size: 26px;
+    color: var(--primary-color);
+    margin-right: 15px;
+  }
+  
+  .friends-header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark-text);
+  }
+  
+  .friends-count {
+    margin-left: 15px;
+    color: var(--gray-text);
+    font-size: 15px;
+    background-color: rgba(109, 40, 217, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  
+  .friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .friend-card {
+    position: relative;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid var(--primary-color);
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .friend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(109, 40, 217, 0.2);
+  }
+  
+  .friend-favorite {
+    border-top: 5px solid var(--favorite-color);
+  }
+  
+  .favorite-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--favorite-color);
+    font-size: 20px;
+    animation: pulse 2s infinite;
+  }
+  
+  .friend-card-header {
+    text-align: center;
+    padding: 30px 0 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  }
+  
+  .friend-avatar {
+    border: 5px solid white;
+    box-shadow: 0 3px 10px rgba(109, 40, 217, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .friend-card:hover .friend-avatar {
+    transform: scale(1.1);
+  }
+  
+  .friend-card-body {
+    padding: 25px;
+    flex: 1;
+  }
+  
+  .friend-name {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  .friend-status {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--gray-text);
+  }
+  
+  .friend-status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(109, 40, 217, 0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .friend-bio {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    color: var(--dark-text);
+    line-height: 1.6;
+    max-height: 90px;
+    overflow: auto;
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+  }
+  
+  .friend-card-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-top: 1px solid rgba(109, 40, 217, 0.1);
+    background-color: rgba(109, 40, 217, 0.03);
+  }
+  
+  .friend-action-btn {
+    font-size: 18px;
+    color: var(--gray-text);
+    transition: all 0.3s ease;
+  }
+  
+  .friend-action-btn:hover {
+    background-color: rgba(109, 40, 217, 0.1);
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .friends-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .friends-grid {
+        grid-template-columns: 1fr;
+    }
+  
+    .friend-card {
+        max-width: 100%;
+    }
+  }

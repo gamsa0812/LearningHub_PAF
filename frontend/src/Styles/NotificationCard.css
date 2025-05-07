@@ -1,0 +1,74 @@
+/* Notifications.css - Purple Theme */
+:root {
+    --primary-color: #6d28d9; /* Deep purple */
+    --secondary-color: #a855f7; /* Light purple */
+    --accent-color: #d8b4fe; /* Soft purple */
+    --light-bg: #f5f3ff; /* Light purple background */
+    --dark-text: #1e1b4b; /* Dark indigo text */
+    --gray-text: #7c7c8a;
+    --shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+  }
+  
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .notifications-container {
+    padding: 16px;
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .notifications-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.2);
+  }
+  
+  .notification-item {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px !important;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  .notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(109, 40, 217, 0.3);
+  }
+  
+  .notification-message {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  
+  .notification-description {
+    font-size: 14px;
+    color: var(--accent-color) !important;
+    font-weight: 500;
+  }
+  
+  .empty-notification {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--gray-text);
+    font-size: 16px;
+  }
